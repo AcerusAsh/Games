@@ -111,7 +111,7 @@ def play():
                         return True
                     else:
                         count= count + 1
-                    if isofkind(combo1)==False and count==2:
+                    if isofkind(combo1)==False and count==3:
                         return False
             else:
                 return False
