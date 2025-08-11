@@ -204,14 +204,15 @@ def play():
         print("Opponent got High card!\n")
     print("Opponent's hand: \n")
     print(oh,"\n")
+    d = {'A': 13,'K':12,'Q':11,'J':10,'10':9,'9':8,'7':6,'6':5,'5':4,'4':3,'3':2,'2':1}
     if(yl>ol):
         print("YOU WON!!!\n")
     elif(ol>yl):
         print("YOU LOST!!!\n")
     elif(yl==1 and ol == 1):
-        if(yh[0][0] > oh[0][0]):
+        if(d[yh[0][0]] > d[oh[0][0]]):
             print("YOU WON!!!")
-        elif(oh[0][0] > yh[0][0]):
+        elif(d[oh[0][0]] > d[yh[0][0]]):
             print("YOU LOST!!!\n")
         else:
             print("IT'S A TIE!!!\n")
