@@ -142,15 +142,6 @@ def play():
                 count = count + 1
             if isofkind(combo)==False and count==10:
                 return False
-    def ispairhc(hand):
-        count = 0
-        for combo in combinations(hand,2): 
-            if isofkind(combo):
-                return combo[0][0]
-            else:
-                count = count + 1
-            if isofkind(combo)==False and count==10:
-                return False
     if ("A" in yh[0]) and ("K" in yh[1]) and ("Q" in yh[2]) and ("J" in yh[3]) and ("10" in yh[4]) and isflush(yh):
         yl = 10
         print("You got a ROYAL FLUSH!!!\n")
@@ -218,13 +209,6 @@ def play():
         print("YOU WON!!!\n")
     elif(ol>yl):
         print("YOU LOST!!!\n")
-    elif(yl==2 and ol==2):
-        if(d[ispairhc(yh)]>d[ispairhc(oh)]):
-            print("YOU WON!!!\n")
-        elif(d[ispairhc(yh)]<d[ispairhc(oh)]):
-            print("YOU LOST!!!\n")
-        else:
-            print("IT'S A TIE!!!\n")
     elif(yl==1 and ol == 1):
         if(d[yh[0][0]] > d[oh[0][0]]):
             print("YOU WON!!!")
