@@ -25,9 +25,9 @@ while True:
                   if c=="H":
                         print("YOU CHOSE TO HIT\n")
                         y = y + int(random.choice([2,3,4,5,6,7,8,9,10.11]))
-                        print("Your number: "+str(y))
+                        print("Your number: "+str(y)+"\n")
                         if y>21:
-                              print("You LOSE")
+                              print("YOU BUSTED! YOU LOST!!!")
                               break
                   elif c=="S":
                               print("YOU CHOSE TO STAND\n")
@@ -37,14 +37,18 @@ while True:
                               continue
             if ds==0:                     
                   dc = int(random.choice([1,2]))
-                  if d>16:
+                  if d>17:
                         dc = int(random.choice([1,2,3,4]))
+                  elif d<10:
+                         dc = 1            
+                  elif d==21:
+                         dc = 3
                   if dc==1:
                         print("DEALER CHOSE TO HIT\n")
                         d = d + int(random.choice([2,3,4,5,6,7,8,9,10.11]))
                         print("Dealer's number: "+str(d)+"\n")
                         if d>21:                              
-                              print("Dealer loses, you win")
+                              print("DEALER BUSTED! YOU WON!!!")
                               break
                   else:
                         print("DEALER CHOSE TO STAND\n")
@@ -55,13 +59,13 @@ while True:
                   p = 21 - y
                   q = 21 - d
                   if p<q:
-                        print("YOU WON!!!")
+                        print("YOU WON!!!\n")
                         break
                   elif p>q:
-                        print("DEALER WON!!!")
+                        print("DEALER WON!!!\n")
                         break
                   else:
-                        print("Draw")
+                        print("Draw\n")
                         break
       pg = input("Enter yes if you want to play again, enter anything else if you don't\n")
       pg = pg.lower()
